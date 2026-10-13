@@ -1,0 +1,274 @@
+/* App container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header section with full-width border-bottom divider */
+.header {
+  width: 100%;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 688px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: inherit;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-family: inherit;
+  font-weight: 400;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Filter inputs */
+.input-div {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 400;
+  text-align: left;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #212529;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-group input::placeholder {
+  color: #6c757d;
+  opacity: 0.65;
+}
+
+.input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath stroke='%236c757d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M1 1L5 5L9 1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Main Content & Cards Grid */
+.content {
+  width: 100%;
+  max-width: 688px;
+  box-sizing: border-box;
+}
+
+.cards-grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Character Card */
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.card-body h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #212529;
+  line-height: 1.3;
+}
+
+.card-body p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #212529;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   RESPONSIVE BREAKPOINTS: Phone, Tablet, Desktop
+   ======================================================== */
+
+/* 1. PHONE (Mobile: < 640px) */
+@media (max-width: 639px) {
+  .header-content {
+    padding: 32px 16px 24px 16px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .input-div {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .content {
+    padding: 24px 16px 48px 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* 2. TABLET (640px - 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .header-content {
+    padding: 48px 24px 32px 24px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .input-div {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .input-group:first-child {
+    flex: 2;
+  }
+
+  .input-group:last-child {
+    flex: 1;
+  }
+
+  .content {
+    padding: 32px 24px 60px 24px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* 3. DESKTOP (>= 1024px) */
+@media (min-width: 1024px) {
+  .header-content {
+    padding: 56px 0 36px 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .input-div {
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .input-group:first-child {
+    flex: 2;
+  }
+
+  .input-group:last-child {
+    flex: 1;
+  }
+
+  .content {
+    padding: 36px 0 80px 0;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
